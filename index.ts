@@ -4,14 +4,14 @@ import bodyParser = require('body-parser');
 
 const clovaSkillHandler  = clova.Client
     .configureSkill()
-    .onLaunchRequest(responseHelper => {
+    .onLaunchRequest(async responseHelper => {
         responseHelper.setSimpleSpeech({
             lang: 'ja',
             type: 'PlainText',
             value: '乃木坂46のメンバーの誕生日を教えます。メンバーの名前を言ってください。'
         });
     })
-    .onIntentRequest(responseHelper => {
+    .onIntentRequest(async responseHelper => {
         const intent = responseHelper.getIntentName();
         const sessionId = responseHelper.getSessionId();
         const slots = responseHelper.getSlots();
@@ -29,7 +29,7 @@ const clovaSkillHandler  = clova.Client
             break;
         }
     })
-    .onSessionEndedRequest(responseHelper => {
+    .onSessionEndedRequest(async responseHelper => {
     })
     .handle();
 
