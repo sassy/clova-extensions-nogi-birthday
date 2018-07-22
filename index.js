@@ -14,7 +14,7 @@ const clovaSkillHandler = clova.Client
     .onIntentRequest(async responseHelper => {
         const intent = responseHelper.getIntent();
         switch (intent) {
-            case 'MemberIntent':
+            case 'MembersIntent':
                 responseHelper.setSimpleSpeech({
                     lang: 'ja',
                     type: 'PlainText',
