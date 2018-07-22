@@ -1,0 +1,24 @@
+{
+  "name": "clova-extension-nogi-birthday",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sassy/clova-extensions-nogi-birthday.git"
+  },
+  "author": "Satoshi Watanabe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sassy/clova-extensions-nogi-birthday/issues"
+  },
+  "homepage": "https://github.com/sassy/clova-extensions-nogi-birthday#readme",
+  "dependencies": {
+    "@line/clova-cek-sdk-nodejs": "^1.0.1",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3"
+  }
+}
