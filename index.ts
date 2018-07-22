@@ -37,7 +37,9 @@ const app = Express();
 const clovaMiddleware = clova.Middleware({
     applicationId: process.env.APPLICATION_ID
 });
-app.post('/clova', clovaMiddleware, () => clovaSkillHandler());
+app.post('/clova', clovaMiddleware, (req, res) => { 
+    clovaSkillHandler();
+});
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
