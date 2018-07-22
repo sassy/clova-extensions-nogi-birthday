@@ -32,3 +32,8 @@ const clovaMiddleware = clova.Middleware({
     applicationId: process.env.APPLICATION_ID
 });
 app.post('/clova', clovaMiddleware, clovaSkillHandler);
+
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log(`Server running on ${port}`);
+});
