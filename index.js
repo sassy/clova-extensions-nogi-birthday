@@ -13,6 +13,9 @@ const clovaSkillHandler = clova.Client
     })
     .onIntentRequest(responseHelper => {
         const intent = responseHelper.getIntentName();
+        const sessionId = responseHelper.getSessionId();
+        const slots = responseHelper.getSlots();
+        console.log(slots);
         switch (intent) {
             case 'MembersIntent':
                 responseHelper.setSimpleSpeech({
