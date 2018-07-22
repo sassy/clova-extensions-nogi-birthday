@@ -1,6 +1,11 @@
 const clova = require('@line/clova-cek-sdk-nodejs');
 const express = require('express');
 const bodyParser = require('body-parser');
+const _ = require('lodash');
+
+const NOGIZAKA_MEMBERS = [
+    { name: 'しらいしまい', birthday: '1992年8月20日' }
+];
 
 const clovaSkillHandler = clova.Client
     .configureSkill()
@@ -15,17 +20,15 @@ const clovaSkillHandler = clova.Client
         const intent = responseHelper.getIntentName();
         const sessionId = responseHelper.getSessionId();
         const slots = responseHelper.getSlots();
-        console.log(slots);
         switch (intent) {
             case 'MembersIntent':
-                switch (slots.memberName) {
-                    case 'しらいしまい':
+                const member = _.find(NOGIZAKA_MEMBERS, {'name': slots.memberName};
+                if (_.isUndefined(member)) {
                     responseHelper.setSimpleSpeech({
                         lang: 'ja',
                         type: 'PlainText',
-                        value: '白石麻衣さんは1992年8月20日です。'
+                        value: `${member.name}さんは${member.birthday}です。`
                     })
-                    break;
                 }
             break;
         }
