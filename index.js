@@ -18,11 +18,15 @@ const clovaSkillHandler = clova.Client
         console.log(slots);
         switch (intent) {
             case 'MembersIntent':
-                responseHelper.setSimpleSpeech({
-                    lang: 'ja',
-                    type: 'PlainText',
-                    value: 'メンバーです'
-                })
+                switch (slots.memberName) {
+                    case 'しらいしまい':
+                    responseHelper.setSimpleSpeech({
+                        lang: 'ja',
+                        type: 'PlainText',
+                        value: '1992年8月20日'
+                    })
+                    break;
+                }
             break;
         }
     })
