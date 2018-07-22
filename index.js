@@ -12,7 +12,7 @@ const clovaSkillHandler = clova.Client
         });
     })
     .onIntentRequest(responseHelper => {
-        const intent = responseHelper.getIntent();
+        const intent = responseHelper.getIntentName();
         switch (intent) {
             case 'MembersIntent':
                 responseHelper.setSimpleSpeech({
