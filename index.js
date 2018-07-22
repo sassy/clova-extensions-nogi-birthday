@@ -23,7 +23,7 @@ const clovaSkillHandler = clova.Client
         switch (intent) {
             case 'MembersIntent':
                 const member = _.find(NOGIZAKA_MEMBERS, {'name': slots.memberName});
-                if (_.isUndefined(member)) {
+                if (!_.isUndefined(member)) {
                     responseHelper.setSimpleSpeech({
                         lang: 'ja',
                         type: 'PlainText',
