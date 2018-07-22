@@ -11,7 +11,7 @@ const clovaSkillHandler = clova.Client
             value: 'ようこそ'
         });
     })
-    .onIntentRequest(async responseHelper => {
+    .onIntentRequest(responseHelper => {
         const intent = responseHelper.getIntent();
         switch (intent) {
             case 'MembersIntent':
