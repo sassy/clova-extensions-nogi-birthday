@@ -8,7 +8,7 @@ const clovaSkillHandler = clova.Client
         responseHelper.setSimpleSpeech({
             lang: 'ja',
             type: 'PlainText',
-            value: 'ようこそ'
+            value: '乃木坂46のメンバーの誕生日を教えます。メンバーの名前を言ってください。'
         });
     })
     .onIntentRequest(responseHelper => {
@@ -23,7 +23,7 @@ const clovaSkillHandler = clova.Client
                     responseHelper.setSimpleSpeech({
                         lang: 'ja',
                         type: 'PlainText',
-                        value: '1992年8月20日'
+                        value: '白石麻衣さんは1992年8月20日です。'
                     })
                     break;
                 }
