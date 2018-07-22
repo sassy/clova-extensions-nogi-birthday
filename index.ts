@@ -1,8 +1,8 @@
-const clova = require('@line/clova-cek-sdk-nodejs');
-const express = require('express');
-const bodyParser = require('body-parser');
+import * as clova from '@line/clova-cek-sdk-nodejs';
+import * as Express from 'express';
+import bodyParser = require('body-parser');
 
-const clovaSkillHandler = clova.Client
+const clovaSkillHandler  = clova.Client
     .configureSkill()
     .onLaunchRequest(responseHelper => {
         responseHelper.setSimpleSpeech({
@@ -15,7 +15,6 @@ const clovaSkillHandler = clova.Client
         const intent = responseHelper.getIntentName();
         const sessionId = responseHelper.getSessionId();
         const slots = responseHelper.getSlots();
-        console.log(slots);
         switch (intent) {
             case 'MembersIntent':
                 switch (slots.memberName) {
@@ -34,13 +33,15 @@ const clovaSkillHandler = clova.Client
     })
     .handle();
 
-const app = new express();
+const app = Express();
 const clovaMiddleware = clova.Middleware({
     applicationId: process.env.APPLICATION_ID
 });
-app.post('/clova', clovaMiddleware, clovaSkillHandler);
+app.post('/clova', clovaMiddleware, () => clovaSkillHandler());
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`Server running on ${port}`);
 });
+
+export default app
