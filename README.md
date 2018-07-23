@@ -1,1 +1,4 @@
-# clova-extensions-nogi-birthday
+# 乃木坂誕生日
+
+乃木坂のメンバーの誕生日を教えてくれるLINE Skillのサーバー実装です。
+
