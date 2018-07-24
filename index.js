@@ -54,7 +54,7 @@ const clovaSkillHandler = clova.Client.configureSkill()
       lang: "ja",
       type: "PlainText",
       value:
-        "乃木坂46のメンバーの誕生日を教えます。メンバーの名前を言ってください。"
+        "乃木坂46のメンバーの誕生日を教えます。メンバーの名前を言ってください。終了させるときは、終了と言ってください。"
     });
   })
   .onIntentRequest(responseHelper => {
@@ -62,16 +62,29 @@ const clovaSkillHandler = clova.Client.configureSkill()
     const sessionId = responseHelper.getSessionId();
     const slots = responseHelper.getSlots();
     switch (intent) {
-      case "MembersIntent":
-        const member = _.find(NOGIZAKA_MEMBERS, { name: slots.memberName });
-        if (!_.isUndefined(member)) {
-          responseHelper.setSimpleSpeech({
-            lang: "ja",
-            type: "PlainText",
-            value: `${member.name}さんは${member.birthday}です。`
-          });
-        }
-        break;
+        case "MembersIntent":
+            const member = _.find(NOGIZAKA_MEMBERS, { name: slots.memberName });
+            if (!_.isUndefined(member)) {
+            responseHelper.setSimpleSpeech({
+                lang: "ja",
+                type: "PlainText",
+                value: `${member.name}さんは${member.birthday}です。`
+            });
+            }
+            break;
+        case "Clova.GuideIntent":
+            responseHelper.setSimpleSpeech({
+                lang: "ja",
+                type: "PlainText",
+                value:
+                "乃木坂46のメンバーの誕生日を教えます。メンバーの名前を言ってください。終了させるときは、終了と言ってください。"
+            });
+            break;
+        case "Clova.YesIntent":
+        case "Clova.NoIntent":
+        case "Clova.CancelIntent":
+            /* do nothing */
+            break;
     }
   })
   .onSessionEndedRequest(responseHelper => {})
