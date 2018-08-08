@@ -65,11 +65,17 @@ const clovaSkillHandler = clova.Client.configureSkill()
         case "MembersIntent":
             const member = _.find(NOGIZAKA_MEMBERS, { name: slots.memberName });
             if (!_.isUndefined(member)) {
-            responseHelper.setSimpleSpeech({
-                lang: "ja",
-                type: "PlainText",
-                value: `${member.name}さんは${member.birthday}です。`
-            });
+                responseHelper.setSimpleSpeech({
+                    lang: "ja",
+                    type: "PlainText",
+                    value: `${member.name}さんは${member.birthday}です。`
+                });
+            } else {
+                responseHelper.setSimpleSpeech({
+                    lang: "ja",
+                    type: "PlainText",
+                    value: "そのメンバーはいません"
+                });
             }
             break;
         case "Clova.GuideIntent":
