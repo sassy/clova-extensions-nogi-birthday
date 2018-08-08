@@ -74,7 +74,7 @@ const clovaSkillHandler = clova.Client.configureSkill()
                 responseHelper.setSimpleSpeech({
                     lang: "ja",
                     type: "PlainText",
-                    value: "そのメンバーはいません。" + 
+                    value: slots.memberName + "はメンバーではありません。" + 
                         "乃木坂46のメンバーの誕生日を教えます。メンバーの名前を言ってください。終了させるときは、終了と言ってください。" 
                 });
             }
