@@ -68,7 +68,7 @@ const clovaSkillHandler = clova.Client.configureSkill()
                 responseHelper.setSimpleSpeech({
                     lang: "ja",
                     type: "PlainText",
-                    value: `${member.name}さんは${member.birthday}です。`
+                    value: `${member.name}さんは　${member.birthday} です。`
                 });
             } else {
                 responseHelper.setSimpleSpeech({
