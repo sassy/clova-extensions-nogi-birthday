@@ -48,13 +48,35 @@ const NOGIZAKA_MEMBERS = [
   { name: "わだまあや", birthday: "1998年4月23日" }
 ];
 
+function checkBirthDay() {
+    const today = new Date();
+    const birthdayMember = new Array();
+    NOGIZAKA_MEMBERS.forEach((value) => {
+        const match = value.birthday.match(/(\d+)年(\d+)月(\d+)日/);
+        if ((today.getMonth() + 1).toString() === match[2] && today.getDate().toString() === match(3)) {
+            birthdayMember.push('value.name');
+        }
+    });
+    if (birthdayMember.length === 0) {
+        return '';
+    }
+    let message = '本日は、';
+    birthdayMember.forEach((value) => {
+        message += name;
+        message += " さん、";
+    });
+    message += "のお誕生日です。おめでとうございます！";
+    return message;
+}
+
+
 const clovaSkillHandler = clova.Client.configureSkill()
   .onLaunchRequest(responseHelper => {
+    const speech =  checkBirthDay() +  "乃木坂46のメンバーの誕生日を教えます。メンバーの名前を言ってください。終了させるときは、終了と言ってください。";
     responseHelper.setSimpleSpeech({
       lang: "ja",
       type: "PlainText",
-      value:
-        "乃木坂46のメンバーの誕生日を教えます。メンバーの名前を言ってください。終了させるときは、終了と言ってください。"
+      value: speech
     });
   })
   .onIntentRequest(responseHelper => {
