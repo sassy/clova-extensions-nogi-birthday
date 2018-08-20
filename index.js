@@ -54,7 +54,7 @@ function checkBirthDay() {
     NOGIZAKA_MEMBERS.forEach((value) => {
         console.log(value);
         const m = value.birthday.match(/(\d+)年(\d+)月(\d+)日/);
-        if ((today.getMonth() + 1).toString() === m[2] && today.getDate().toString() === m(3)) {
+        if ((today.getMonth() + 1).toString() === m[2] && today.getDate().toString() === m[3]) {
             birthdayMember.push('value.name');
         }
     });
