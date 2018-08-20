@@ -26,7 +26,7 @@ const NOGIZAKA_MEMBERS = [
   { name: "さくらいれいか", birthday: "1994年5月16日" },
   { name: "ささきことこ", birthday: "1998年8月28日" },
   { name: "さとうかえで", birthday: "1998年3月23日" },
-  { name: "しらいしまい", birthday: "1992年8月21日" },
+  { name: "しらいしまい", birthday: "1992年8月20日" },
   { name: "しんうちまい", birthday: "1992年1月22日" },
   { name: "すずきあやね", birthday: "1999年3月5日" },
   { name: "たかやまかずみ", birthday: "1994年2月8日" },
@@ -51,8 +51,6 @@ const NOGIZAKA_MEMBERS = [
 
 function checkBirthDay() {
     const today = moment().tz('Asia/Tokyo');
-    console.log((today.month() + 1).toString());
-    console.log(today.date().toString());
     const birthdayMember = new Array();
     NOGIZAKA_MEMBERS.forEach((value) => {
         const m = value.birthday.match(/(\d+)年(\d+)月(\d+)日/);
