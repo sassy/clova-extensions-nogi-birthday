@@ -2,6 +2,7 @@ const clova = require("@line/clova-cek-sdk-nodejs");
 const express = require("express");
 const bodyParser = require("body-parser");
 const _ = require("lodash");
+const moment = require('moment-timezone');
 
 const NOGIZAKA_MEMBERS = [
   { name: "あきもとまなつ", birthday: "1993年8月20日" },
@@ -49,11 +50,13 @@ const NOGIZAKA_MEMBERS = [
 ];
 
 function checkBirthDay() {
-    const today = new Date();
+    const today = moment().tz('Asia/Tokyo');
+    console.log((today.month() + 1).toString());
+    console.log(today.date().toString());
     const birthdayMember = new Array();
     NOGIZAKA_MEMBERS.forEach((value) => {
         const m = value.birthday.match(/(\d+)年(\d+)月(\d+)日/);
-        if ((today.getMonth() + 1).toString() === m[2] && today.getDate().toString() === m[3]) {
+        if ((today.month() + 1).toString() === m[2] && today.date().toString() === m[3]) {
             birthdayMember.push(value.name);
         }
     });
