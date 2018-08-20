@@ -63,7 +63,7 @@ function checkBirthDay() {
     }
     let message = '本日は、';
     birthdayMember.forEach((value) => {
-        message += name;
+        message += value;
         message += " さん、";
     });
     message += "のお誕生日です。おめでとうございます！";
