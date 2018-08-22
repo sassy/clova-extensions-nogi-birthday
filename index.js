@@ -59,7 +59,7 @@ function checkBirthDay() {
         }
     });
     if (birthdayMember.length === 0) {
-        return '';
+        return [];
     }
     let message = '本日は、';
     birthdayMember.forEach((value) => {
@@ -67,18 +67,21 @@ function checkBirthDay() {
         message += " さん、";
     });
     message += "のお誕生日です。おめでとうございます！";
-    return message;
+    return [
+        SpeechBuilder.createSpeechUrl('https://s3-ap-northeast-1.amazonaws.com/nogi-birthday/happy.mp3'),
+        SpeechBuilder.createSpeechText(message)
+    ];
 }
 
 
 const clovaSkillHandler = clova.Client.configureSkill()
   .onLaunchRequest(responseHelper => {
-    const speech =  checkBirthDay() +  "乃木坂46のメンバーの誕生日を教えます。メンバーの名前を言ってください。終了させるときは、終了と言ってください。";
-    responseHelper.setSimpleSpeech({
-      lang: "ja",
-      type: "PlainText",
-      value: speech
-    });
+    const speechArray = checkBirthDay();
+    speechArray.push(
+        SpeechBuilder.createSpeechText( "乃木坂46のメンバーの誕生日を教えます。メンバーの名前を言ってください。終了させるときは、終了と言ってください。")
+    );
+
+    responseHelper.setSpeechList(speechArray);
   })
   .onIntentRequest(responseHelper => {
     const intent = responseHelper.getIntentName();
