@@ -68,8 +68,8 @@ function checkBirthDay() {
     });
     message += "のお誕生日です。おめでとうございます！";
     return [
-        SpeechBuilder.createSpeechUrl('https://s3-ap-northeast-1.amazonaws.com/nogi-birthday/happy.mp3'),
-        SpeechBuilder.createSpeechText(message)
+        clova.SpeechBuilder.createSpeechUrl('https://s3-ap-northeast-1.amazonaws.com/nogi-birthday/happy.mp3'),
+        clova.SpeechBuilder.createSpeechText(message)
     ];
 }
 
@@ -78,7 +78,7 @@ const clovaSkillHandler = clova.Client.configureSkill()
   .onLaunchRequest(responseHelper => {
     const speechArray = checkBirthDay();
     speechArray.push(
-        SpeechBuilder.createSpeechText( "乃木坂46のメンバーの誕生日を教えます。メンバーの名前を言ってください。終了させるときは、終了と言ってください。")
+        clova.SpeechBuilder.createSpeechText( "乃木坂46のメンバーの誕生日を教えます。メンバーの名前を言ってください。終了させるときは、終了と言ってください。")
     );
 
     responseHelper.setSpeechList(speechArray);
