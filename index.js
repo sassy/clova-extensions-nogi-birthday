@@ -47,7 +47,7 @@ const NOGIZAKA_MEMBERS = [
   { name: "わかつきゆみ", birthday: "1994年6月27日" },
   { name: "わたなべみりあ", birthday: "1999年11月1日" },
   { name: "わだまあや", birthday: "1998年4月23日" },
-  { name: "えんどうさくら", birthday: "2002年8月14日" },
+  { name: "えんどうさくら", birthday: "2001年10月3日" },
   { name: "かきはるか", birthday: "2001年8月8日" },
   { name: "かけはしさやか", birthday: "2002年11月20日" },
   { name: "かながわさや", birthday: "2001年10月31日" },
