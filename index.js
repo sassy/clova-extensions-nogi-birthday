@@ -46,7 +46,19 @@ const NOGIZAKA_MEMBERS = [
   { name: "よだゆうき", birthday: "2000年5月5日" },
   { name: "わかつきゆみ", birthday: "1994年6月27日" },
   { name: "わたなべみりあ", birthday: "1999年11月1日" },
-  { name: "わだまあや", birthday: "1998年4月23日" }
+  { name: "わだまあや", birthday: "1998年4月23日" },
+  { name: "えんどうさくら", birthday: "2002年8月14日" },
+  { name: "かきはるか", birthday: "2001年8月8日" },
+  { name: "かけはしさやか", birthday: "2002年11月20日" },
+  { name: "かながわさや", birthday: "2001年10月31日" },
+  { name: "きたがわゆり", birthday: "2001年8月8日" },
+  { name: "しばたゆな", birthday: "2003年3月3日" },
+  { name: "せいみやれい", birthday: "2003年8月1日" },
+  { name: "たむらまゆ", birthday: "1999年1月12日" },
+  { name: "つついあやめ", birthday: "2004年6月8日" },
+  { name: "はやかわせいら", birthday: "2000年8月24日" },
+  { name: "やくぼみお", birthday: "2002年8月14日" },
+
 ];
 
 function checkBirthDay() {
