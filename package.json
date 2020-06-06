@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/sassy/clova-extensions-nogi-birthday#readme",
   "dependencies": {
-    "@line/clova-cek-sdk-nodejs": "^1.0.1",
+    "@line/clova-cek-sdk-nodejs": "^1.2.1",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "lodash": "^4.17.11",
