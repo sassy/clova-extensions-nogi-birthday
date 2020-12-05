@@ -23,7 +23,7 @@
     "express": "^4.17.1",
     "lodash": "^4.17.19",
     "moment": "^2.27.0",
-    "moment-timezone": "^0.5.29"
+    "moment-timezone": "^0.5.32"
   },
   "devDependencies": {
     "mocha": "8.1.1"
